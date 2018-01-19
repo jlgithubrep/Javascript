@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jeu + ou -</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section class="jeu">
+
+
+    <div class="titre">Jeu + ou -</div>
+
+    <div class="lesButtons">
+        <div class="container">
+            <div class="box">
+                <a href="#" class="button1">0 à 100</a>
+                <p id="message1"></p>
+            </div>
+            <div class="box">
+                <a href="#" class="button2">0 à 1000</a>
+                <p id="message2"></p>
+            </div>
+            <div class="box">
+                <a href="#" class="button3">0 à 10 000</a>
+                <p id="message3"></p>
+            </div>
+            <div class="box">
+                <a href="#" class="button4">0 à 1 000 000</a>
+                <p id="message4"></p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container2">
+
+
+        <div class="box">
+            <p id="jeuChoisi"></p>
+            <p>Donnez votre réponse: </p>
+
+            <input id="number" type="number">
+            <button type="button" onclick="fonctionValeur()">Envoie</button>
+
+            <p id="hist"></p>
+        </div>
+    </div>
+
+
+</section>
+
+<script src="jeu.js"></script>
+</body>
+</html>

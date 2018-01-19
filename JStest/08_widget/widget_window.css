@@ -1,0 +1,46 @@
+html {
+    background-image: url("shards_pattern.jpg");
+}
+._box-mini, _box-mini2 {
+    margin: 50px 50px 25px 25px;
+    border: 1px solid black;
+    background-image: url("cork-wallet.png");
+    box-shadow: 8px 6px 5px 0px black;
+}
+
+._container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+._titre {
+    margin:15px;
+    padding: 15px;
+    font-size: 20px;
+    font-family: Aharoni;
+    border: 1px double black;
+    box-shadow: 4px 2px 5px 0px #666666;
+    text-align: center;
+    width: 80%;
+}
+
+._fleche-bas,._fleche-haut {
+    font-size: 30px;
+    margin: 10px 10px 10px 10px;
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+    justify-content: center;
+}
+
+
+._text-inside {
+    border: 1px solid black;
+    padding: 10px 10px 10px 10px;
+    margin: 10px 10px 10px 10px;
+    background-color: lightgrey;
+    overflow-x: visible;
+    overflow-y: visible;
+
+
+}
