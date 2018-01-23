@@ -21,7 +21,7 @@ $(document).ready(function () {
 
     //remplissage d'un tableau de chiffre de 1 à 16 au hasard, sans repetition
     let listeCarte = [];
-    while (listeCarte.length < 16) { //rempli un tableau de random de 1 à 25 different de longeur bombeRandom
+    while (listeCarte.length < 16) { //rempli un tableau de random de 0 à 15 different de longeur 16
         let randomnumber = getRandomInt(0, 16); //random de 0 à 15
         if (listeCarte.indexOf(randomnumber) != -1) continue;
         listeCarte[listeCarte.length] = randomnumber;
@@ -58,7 +58,7 @@ $(document).ready(function () {
     function clicCarte() {
 
         //console.log(this.className);
-        if (this.className == "carte" && t==0) { //execute la suite seulement si on clic sur case grise
+        if (this.className == "carte" && t==0) { //execute la suite seulement si on clic sur case grise et que l'on attend pas 2 cartes impaires de se rechacher
 
             let id = this.id;
             console.log("id", id);
@@ -89,7 +89,7 @@ $(document).ready(function () {
                     console.log("match");
                 } else {
                     console.log("no match");
-                    t=1;
+                    t=1;//
 
                     setTimeout(function () {
                         $("#" + id).removeClass(nomCarte);

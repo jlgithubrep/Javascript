@@ -17,8 +17,8 @@
       <file leaf-file-name="memoire.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/13_tp_casino/js/memoire.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="91" column="20" lean-forward="false" selection-start-line="91" selection-start-column="20" selection-end-line="91" selection-end-column="20" />
+            <state relative-caret-position="-168">
+              <caret line="23" column="100" lean-forward="false" selection-start-line="23" selection-start-column="100" selection-end-line="23" selection-end-column="100" />
               <folding />
             </state>
           </provider>
@@ -27,7 +27,7 @@
       <file leaf-file-name="memoire.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/13_tp_casino/memoire.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
+            <state relative-caret-position="227">
               <caret line="44" column="33" lean-forward="false" selection-start-line="44" selection-start-column="33" selection-end-line="44" selection-end-column="33" />
               <folding>
                 <marker date="1516281633713" expanded="false" signature="454:654" ph="..." />
@@ -283,12 +283,12 @@
       <workItem from="1516349445424" duration="1504000" />
       <workItem from="1516372732711" duration="89000" />
       <workItem from="1516609406628" duration="6899000" />
-      <workItem from="1516701006775" duration="1294000" />
+      <workItem from="1516701006775" duration="2426000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="214327000" />
+    <option name="totallyTimeSpent" value="215459000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -601,7 +601,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/13_tp_casino/memoire.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
+        <state relative-caret-position="227">
           <caret line="44" column="33" lean-forward="false" selection-start-line="44" selection-start-column="33" selection-end-line="44" selection-end-column="33" />
           <folding>
             <marker date="1516281633713" expanded="false" signature="454:654" ph="..." />
@@ -611,8 +611,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/13_tp_casino/js/memoire.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="91" column="20" lean-forward="false" selection-start-line="91" selection-start-column="20" selection-end-line="91" selection-end-column="20" />
+        <state relative-caret-position="-168">
+          <caret line="23" column="100" lean-forward="false" selection-start-line="23" selection-start-column="100" selection-end-line="23" selection-end-column="100" />
           <folding />
         </state>
       </provider>
