@@ -43,6 +43,10 @@
     background-color: lightgray;
 }
 
+.carte:hover{
+    background-color: darkgray;
+}
+
 /*
 .carteRetourne{
     background-image: url("../img/cards/jack_of_spades2.png");
