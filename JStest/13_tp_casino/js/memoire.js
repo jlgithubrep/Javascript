@@ -53,11 +53,12 @@ $(document).ready(function () {
     let retourne = 0;
     let numRetourne;
     let idRetourne;
+    let t=0;//pour ne pas ouvrir une 3eme carte quand on attend que 2 cartes qui ne vont pas ensemble se re cache
 
     function clicCarte() {
 
         //console.log(this.className);
-        if (this.className == "carte") { //execute la suite seulement si on clic sur case grise
+        if (this.className == "carte" && t==0) { //execute la suite seulement si on clic sur case grise
 
             let id = this.id;
             console.log("id", id);
@@ -88,6 +89,7 @@ $(document).ready(function () {
                     console.log("match");
                 } else {
                     console.log("no match");
+                    t=1;
 
                     setTimeout(function () {
                         $("#" + id).removeClass(nomCarte);
@@ -97,6 +99,10 @@ $(document).ready(function () {
                     setTimeout(function () {
                         $("#" + idRetourne).removeClass(listeNomCarte(numRetourne));
                         $("#" + idRetourne).addClass("carte");
+                    }, 2000);
+
+                    setTimeout(function(){
+                        t=0;
                     }, 2000);
                 }
 
