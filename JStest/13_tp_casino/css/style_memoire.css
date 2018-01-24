@@ -36,17 +36,34 @@
     border-collapse: collapse;
 
 }
-
+/*
 .carte{
     border: 1px solid black;
     padding: 70px;
     background-color: lightgray;
 }
+*/
+
+.carte{
+    background-image: url("../img/cards/1card_back.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 70px;
+}
+
 
 .carte:hover{
     background-color: darkgray;
 }
 
+/*
+.carte:hover{
+    background-image: url("../img/cards/1card_back_hover.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 70px;
+}
+*/
 /*
 .carteRetourne{
     background-image: url("../img/cards/jack_of_spades2.png");

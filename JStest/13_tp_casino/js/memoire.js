@@ -50,15 +50,16 @@ $(document).ready(function () {
         return tab[u];
     }
 
-    let retourne = 0;
-    let numRetourne;
-    let idRetourne;
-    let t=0;//pour ne pas ouvrir une 3eme carte quand on attend que 2 cartes qui ne vont pas ensemble se re cache
+    let retourne = 0;//pour savoir si une autre carte a été retournée
+    let numRetourne;//pour retenir le type de la 1er carte retournée
+    let idRetourne;//pour retenir l'id de la 1er carte retournée
+    let t = 0;//pour ne pas ouvrir une 3eme carte quand on attend que 2 cartes qui ne vont pas ensemble se re cache
+    let score = 0;
 
     function clicCarte() {
 
         //console.log(this.className);
-        if (this.className == "carte" && t==0) { //execute la suite seulement si on clic sur case grise et que l'on attend pas 2 cartes impaires de se rechacher
+        if (this.className == "carte" && t == 0) { //execute la suite seulement si on clic sur case grise et que l'on attend pas 2 cartes impaires de se rechacher
 
             let id = this.id;
             console.log("id", id);
@@ -87,9 +88,15 @@ $(document).ready(function () {
 
                 if (numRetourne == numCarte) {
                     console.log("match");
+                    score++;
+                    console.log("score", score);
+                    document.getElementById("message").innerHTML = "Score: "+score;
+                    if (score == 8) {
+                        document.getElementById("message").innerHTML = "Vous avez gagné!";
+                    }
                 } else {
                     console.log("no match");
-                    t=1;//
+                    t = 1;//
 
                     setTimeout(function () {
                         $("#" + id).removeClass(nomCarte);
@@ -101,8 +108,8 @@ $(document).ready(function () {
                         $("#" + idRetourne).addClass("carte");
                     }, 2000);
 
-                    setTimeout(function(){
-                        t=0;
+                    setTimeout(function () {
+                        t = 0;
                     }, 2000);
                 }
 
