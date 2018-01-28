@@ -248,6 +248,7 @@ $(document).ready(function () {
                 nbHasard[1] = 3;
                 nbHasard[2] = 3;
 */
+//test
         console.log("nbhasard", nbHasard);
 
         affichageMastermind();
