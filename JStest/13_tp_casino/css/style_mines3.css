@@ -54,6 +54,10 @@ th, td{
     background-color: lightgray;
 }
 
+.case:hover{
+    background-color: darkgrey;
+}
+
 .caseSafe {
     background-color: lightgreen;
 }

@@ -59,7 +59,8 @@ $(document).ready(function () {
 
         let occurence = 0;
         let bonnePlace = 0;
-        let testDejaTtrouvé;
+        //let testDejaTtrouvé;
+		let testDejaTrouve = [];
         let dejaTtrouve = 0;
 
 
@@ -74,25 +75,53 @@ $(document).ready(function () {
                         occurence++;
 
                         //traitement des doublons
+						/*
                         if (testDejaTtrouvé == nbHasard[i]) {
-                            dejaTtrouve++;
+                            dejaTtrouve++;console.log("LAAAAAA");
                         }
                         testDejaTtrouvé = nbHasard[i];
+						console.log("testDejaTtrouvé",testDejaTtrouvé);
+						*/
+						console.log(tabDecomposition[j]);
+						for (let h=0;h<testDejaTrouve.length;h++) {
+						  if(testDejaTrouve[h]==tabDecomposition[j]){
+							dejaTtrouve++;
+							break;
+						  }
+						}
+						testDejaTrouve.push(tabDecomposition[j]);
+						//console.log("elng",testDejaTrouve.length,tabDecomposition[j]);
                     }
                     else {
                         occurence++;
 
                         //traitement des doublons
+						/*
                         if (testDejaTtrouvé == nbHasard[i]) {
-                            dejaTtrouve++;
+                            dejaTtrouve++;console.log("LAAAAAA");
                         }
                         testDejaTtrouvé = nbHasard[i];
-
+						console.log("testDejaTtrouvé",testDejaTtrouvé);
+						*/
+						console.log(tabDecomposition[j]);
+						for (let h=0;h<testDejaTrouve.length;h++) {
+						  if(testDejaTrouve[h]==tabDecomposition[j]){
+							dejaTtrouve++;
+							break;
+						  }
+						}
+						testDejaTrouve.push(tabDecomposition[j]);
+						//console.log("elng",testDejaTrouve.length,tabDecomposition[j]);
                     }
 
                 }
             }
         }
+		
+	
+						  console.log("azrf<",testDejaTrouve);
+						
+		
 
         let mess;//variable pour stocké les messages html à renvoyer
 
@@ -110,11 +139,11 @@ $(document).ready(function () {
 
 
             if (bonnePlace > 0 && bonnePlace < 3 && occurence == 0) {
-                mess = t + ": " + bonnePlace + " chiffres à la bonne place et " + (3 - bonnePlace) + " qui n'existe pas<br>";
+                mess = t + ": " + bonnePlace + " chiffres à la bonne place<br>";
                 document.getElementById("message").innerHTML = mess;
                 historique = mess;
             } else if (bonnePlace > 0 && bonnePlace < 3 && occurence > 0) {
-                mess = t + ": " + bonnePlace + " chiffres à la bonne place, " + (occurence - bonnePlace) + " bon chiffres mal placés et " + (3 - occurence) + " qui n'existe pas<br>";
+                mess = t + ": " + bonnePlace + " chiffres à la bonne place, " + (occurence - bonnePlace) + " bon chiffres mal placés<br>";
                 document.getElementById("message").innerHTML = mess;
                 historique = mess;
             } else if (bonnePlace == 3) {
@@ -126,27 +155,51 @@ $(document).ready(function () {
         }
 
         if (dejaTtrouve > 0) {
-            console.log("adezadfze");
+            console.log("dejaTrouve>0");
             if (bonnePlace < 3 && occurence == 0) {
-                mess = t + ": " + bonnePlace + " chiffres à la bonne place et " + (3 - bonnePlace) + " qui n'existe pas, 1 chiffre apparait plusieurs fois<br>";
+                //mess = t + ": " + bonnePlace + " chiffres à la bonne place, 1 chiffre apparait plusieurs fois<br>";
+				mess = t + ": " + bonnePlace + " chiffres à la bonne place<br>";
                 document.getElementById("message").innerHTML = mess;
                 historique = mess;
             } else if (bonnePlace < 3 && occurence > 0) {
-                mess = t + ": " + bonnePlace + " chiffres à la bonne place, " + (occurence - bonnePlace - dejaTtrouve + 1) + " bon chiffres mal placés et " + (occurence - dejaTtrouve - bonnePlace + 1) + " qui n'existe pas, 1 chiffre apparait plusieurs fois<br>";
+				//let bonMalPlace = occurence - dejaTtrouve;
+                let bonMalPlace = occurence - dejaTtrouve - bonnePlace; // +1
+				console.log("flxjkjwjlwp",bonMalPlace);
+				
+				if(bonnePlace > 1 ){
+					bonMalPlace += 1;
+				}
+				
+
+                //mess = t + ": " + bonnePlace + " chiffffffres à la bonne place, "+bonMalPlace+" bon chiffres mal placés, 1 chiffre apparait plusieurs fois<br>";
+				mess = t + ": " + bonnePlace + " chiffffffres à la bonne place, "+bonMalPlace+" bon chiffres mal placés<br>";
                 document.getElementById("message").innerHTML = mess;
                 historique = mess;
-            } else if (bonnePlace == 3) {
+            }
+            else if (bonnePlace == 3) {
                 mess = t + ": est le bon nombre, bravo, votre mise x10 ajouté à la balance";
                 document.getElementById("message").innerHTML = mess;
                 balance += pari * 10;
                 document.getElementById("balance").innerHTML = "" + balance;
             }
+
+			//333
+			/*
+            if (occurence == 3 && dejaTtrouve == 2) {
+                let bonMalPlace = occurence - bonnePlace - dejaTtrouve;
+
+                mess = t + ": " + bonnePlace + " chiffres à la bonne place, " + bonMalPlace + " bon chiffres mal placés, 1 chiffre apparait plusieurs fois<br>";
+                document.getElementById("message").innerHTML = mess;
+                historique = mess;
+            }
+			*/
+			
         }
 
         $(".historique").append(historique);
         console.log("valeur dejaTrouve à la fin de la fct game", dejaTtrouve);
         console.log("valeur d'occurence à la fin de la fct game ", occurence);
-        console.log("valeur de bonnePLace à la fin de la fct game", bonnePlace);
+        console.log("valeur de bonnePlace à la fin de la fct game", bonnePlace);
     }
 
 
@@ -169,11 +222,32 @@ $(document).ready(function () {
         nbHasard[1] = getRandomInt(1, 9);
         nbHasard[2] = getRandomInt(1, 9);
 
-        /*
-        nbHasard[0] = 7;
+
+		//proposez 101
+	/*
+		nbHasard[0] = 1;
         nbHasard[1] = 7;
-        nbHasard[2] = 5;
+        nbHasard[2] = 1;
 */
+
+        //161
+		/*
+                nbHasard[0] = 6;
+                nbHasard[1] = 1;
+                nbHasard[2] = 1;
+        */
+		
+		//proposer 202
+		/*
+		        nbHasard[0] = 6;
+                nbHasard[1] = 5;
+                nbHasard[2] = 2;
+*/
+
+				nbHasard[0] = 3;
+                nbHasard[1] = 3;
+                nbHasard[2] = 3;
+
         console.log("nbhasard", nbHasard);
 
         affichageMastermind();
