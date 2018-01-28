@@ -170,9 +170,9 @@ $(document).ready(function () {
 					bonMalPlace += 1;
 				}
 				
-
+				console.log("* bien placé est 1* mal placé");
                 //mess = t + ": " + bonnePlace + " chiffffffres à la bonne place, "+bonMalPlace+" bon chiffres mal placés, 1 chiffre apparait plusieurs fois<br>";
-				mess = t + ": " + bonnePlace + " chiffffffres à la bonne place, "+bonMalPlace+" bon chiffres mal placés<br>";
+				mess = t + ": " + bonnePlace + " chiffre(s) à la bonne place, "+bonMalPlace+" bon chiffres mal placés<br>";
                 document.getElementById("message").innerHTML = mess;
                 historique = mess;
             }
@@ -243,11 +243,11 @@ $(document).ready(function () {
                 nbHasard[1] = 5;
                 nbHasard[2] = 2;
 */
-
+/*
 				nbHasard[0] = 3;
                 nbHasard[1] = 3;
                 nbHasard[2] = 3;
-
+*/
         console.log("nbhasard", nbHasard);
 
         affichageMastermind();
